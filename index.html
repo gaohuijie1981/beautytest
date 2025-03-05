@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>美颜测试</title>
+    <style>
+        * {
+            font-size: 20px;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .panel {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 20px;
+            margin: 0;
+            border-radius: 5px;
+            background: #ccc;
+            opacity: .7;
+        }
+
+        .title {
+            width: 80px;
+        }
+
+        .value {
+            width: 80px;
+            text-align: right;
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        #upload {
+            margin-top: 20px;
+            margin-left: 10px;
+            margin-right: 10px;
+            padding: 10px;
+            border: 1px solid #000;
+            display: inline-block;
+            padding: 6px 12px;
+            cursor: pointer;
+        }
+
+        #save {
+            margin-top: 20px;
+            margin-left: 10px;
+            margin-right: 10px;
+            padding: 10px;
+            border: 1px solid #000;
+            display: inline-block;
+            padding: 6px 12px;
+            cursor: pointer;
+        }
+
+        #loading {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        
+        <canvas id="canvas"></canvas>
+        
+        <div id="loading">正在载入模型...</div>
+
+        <div class="panel">
+            <label>
+                <span class="title">色温</span>
+                <input type="range" id="temp" min="2000" max="10000" value="5000" step="500">
+                <span class="value">5000</span>
+            </label>
+            <label>
+                <span class="title">色调</span>
+                <input type="range" id="tint" min="-100" max="100" value="0" step="10">
+                <span class="value">0</span>
+            </label>
+            <label>
+                <span class="title">嫩肤</span>
+                <input type="range" id="blur" min="0" max="50" value="0" step="5">
+                <span class="value">0</span>
+            </label>
+            <label>
+                <span class="title">美白</span>
+                <input type="range" id="whiten" min="0" max="50" value="0" step="5">
+                <span class="value">0</span>
+            </label>
+            <label>
+                <span class="title">瘦脸</span>
+                <input type="range" id="thin" min="0" max="100" value="0" step="10">
+                <span class="value">0</span>
+            </label>
+            <label>
+                <span class="title">大眼</span>
+                <input type="range" id="eye" min="0" max="100" value="0" step="10">
+                <span class="value">0</span>
+            </label>
+            <label for="file" id="upload">上传</label>
+            <input id="file" type="file" />
+            <label id="save">保存</label>
+        </div>
+
+    </div>
+    
+    <script type="module" src="./src/index.ts"></script>
+</body>
+
+</html>

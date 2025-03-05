@@ -1,0 +1,15 @@
+{
+  "name": "beautytest",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4",
+    "vite": "^5.4.2"
+  },
+  "dependencies": {
+    "beautypixel": "^0.1.7",
+    "face-api.js": "^0.22.2"
+  }
+}
